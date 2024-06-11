@@ -1,7 +1,20 @@
-<script setup>
+<script>
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
 import AppFooter from './components/AppFooter.vue'
+
+export default{
+  data() {
+    return{
+    
+    }
+  },
+  components:{
+    AppHeader,
+    AppMain,
+    AppFooter
+  }
+}
 </script>
 
 <template>
@@ -10,6 +23,5 @@ import AppFooter from './components/AppFooter.vue'
  <AppFooter />
 </template>
 
-<style scoped>
-
+<style> 
 </style>
