@@ -1,7 +1,7 @@
 <script>
-import AppHeader from './components/AppHeader.vue'
-import AppMain from './components/AppMain.vue'
-import AppFooter from './components/AppFooter.vue'
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default{
   data() {
@@ -23,5 +23,8 @@ export default{
  <AppFooter />
 </template>
 
-<style> 
+<style lang="scss">
+@use './styles/partials/mixins' as*;
+@use './styles/partials/variables' as*;
+@use './styles/general.scss';
 </style>

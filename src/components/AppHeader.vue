@@ -2,39 +2,68 @@
 export default{
   data() {
     return{
-      navList:[
+      navBarList:[
         {
-          message:'CHARACTERS'
+          id:1,
+          title:'CHARACTERS',
+          active:false,
+          url:'#',
         },
         {
-          message:'COMICS'
+          id:2,
+          title:'COMICS',
+          active:true,
+          url:'#',
         },
         {
-          message:'MOVIES'
+          id:3,
+          title:'MOVIES',
+          active:false,
+          url:'#',
         },
         {
-          message:'TV'
+          id:4,
+          title:'TV',
+          active:false,
+          url:'#',
         },
         {
-          message:'GAMES'
+          id:5,
+          title:'GAMES',
+          active:false,
+          url:'#',
         },
         {
-          message:'COLLECTIBLES'
+          id:6,
+          title:'COLLECTIBLES',
+          active:false,
+          url:'#',
         },
         {
-          message:'VIDEOS'
+          id:7,
+          title:'VIDEOS',
+          active:false,
+          url:'#',
         },
         {
-          message:'FANS'
+          id:8,
+          title:'FANS',
+          active:false,
+          url:'#',
         },
         {
-          message:'NEWS'
+          id:9,
+          title:'NEWS',
+          active:false,
+          url:'#',
         },
         {
-          message:'SHOP'
+          id:10,
+          title:'SHOP',
+          active:false,
+          url:'#',
         },
       ]
-
     }
   }
 }
@@ -42,24 +71,31 @@ export default{
 </script>
 
 <template>
-  <div class="header">
+  <header>
+
+    <div class="header bg-white px-5 py-2 mt-3 ">
     <img src="../assets/img/dc-logo.png" alt="logoDC">
   <nav class="navbar">
-    <li v-for="(element, index) in navList" :key ="index">
-      {{ element.message }}
-    </li>
+   <li v-for="link in navBarList" :key="link.id" :class="(link.active)? 'active' : '' ">
+    {{ link.title }}
+   </li>
   </nav>
   </div>
  
+
+  </header>
+ 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../styles/partials/variables' as*;
 
 div.header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
+ 
+  
 
   nav{
   display: flex;
@@ -67,6 +103,10 @@ div.header{
 
   li{
     margin-left: 1rem;
+    &.active{
+      color: $color-blue-light;
+      border-bottom:  solid $color-blue-light;
+    }
   }
 }
 
